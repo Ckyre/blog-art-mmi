@@ -1,0 +1,472 @@
+@import "_var";
+@import "_media";
+*{
+    box-sizing: border-box;
+}
+//div container de la section accueil
+.accueil{
+    position: relative;
+    margin: 3vh 2vw;
+    p{
+        font-size: .65em;
+        font-family: $montserrat;
+        color: white;
+        text-align: justify;
+    }
+    h1{
+        text-align: center;
+        font-size: 1.5em;
+        // position: absolute;
+        font-weight: bold;
+        // top: 8%;
+        // left: 50%;
+        // transform: translate(-50%);
+        // z-index: 2;
+        color:#F5BB3D;
+    }
+    h2{
+        color: white;
+        font-family: $prata;
+        text-align: center;
+        font-size: 1em;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+//Division de la page d'accueil en container gauche et droite
+.container-left{
+    width: 100%;
+    justify-content: flex-start;
+}
+.container-right{
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+//GRID
+//Grid droite
+.container-grid-right{
+    display: grid;
+    grid-template-columns:100%;
+    grid-template-rows: 25vh 25vh;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.newsletter{
+    position: relative;
+    grid-column: 1 / 1;
+    grid-row: 2 / 3;
+    background-color: white;
+    box-shadow: -2px 2px 6px grey;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        color: black;
+    }
+    a{
+        color: black;
+    }
+}
+
+.a-propos{
+    position: relative;
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+    background-color: black;
+}
+//Fin Grid droite
+//Grid gauche
+.container-grid-left{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 30vh;
+        grid-auto-rows: 25vh;
+        gap: 10px;
+}
+
+//definition des areas pour les contenus
+.main-article{
+    position: relative;
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+    h1{
+        // color: white;
+        width: 100%;
+    }
+    a{
+        width: 100%;
+        height: 100%;
+    }
+}
+#mobileh2-main{
+    display: block;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2%;
+}
+.article{
+    position: relative;
+    background-color: black;
+    .icon{
+        display: none;
+    }
+}
+
+//contenu des areas
+.cont{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.desc{
+    position:absolute;
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.29315476190476186) 0%,rgba(0,0,0,1) 55%);
+
+    padding: 4% 3%;
+}    
+
+.desc-article{
+    position:absolute;
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.29315476190476186) 0%,
+     rgba(0,0,0,1) 55%);
+    padding: 4% 3%;
+
+    //icon en savoir plus des articles
+    .icon{
+        opacity: 1;
+        bottom: 50%;
+        right: 5%;
+        transform: translate(0, 50%);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+//Champ text newsletter
+.input{
+    margin: 4% 0%;
+    width: 80%;
+    height: 35%;
+    border: 1px solid black;
+    border-radius: 11px;
+    background-color: white;
+    box-shadow: -2px 2px 6px grey;
+    padding: 0 10px;
+}
+
+.button-sinsc{
+    background-color: #F5BB3D;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: content-box;
+    text-align: center;
+    display: inline-block;
+    box-shadow: -2px 2px 6px grey;
+    cursor: pointer;
+    padding: 10px 20px;
+    a {
+        width: 100%;
+        height: 100%;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+//Version Laptop
+@include laptop{
+    .accueil{
+        padding: 0 6%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        p{
+            font-size: 1em;
+        }
+        h1{
+            position: static;
+            left: 0;
+            transform: translate(0);
+            text-align: center;
+            font-size: 2.25em;
+        }
+        h2{
+            font-size: 1.5em;
+        }
+        a{
+            text-decoration: none;
+        }
+    }
+
+    //Division de la page d'accueil en container gauche et droite
+    .container-left{
+        margin-top: 12px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .container-right{
+        margin-top: 12px;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    //Grid droite
+    .container-grid-right{
+        display: grid;
+        grid-template-columns:100%;
+        grid-template-rows: repeat(2, 35vh);
+        gap: 10px;
+        align-items: stretch;
+    }
+    //Grid gauche
+    .container-grid-left{
+        display: grid;
+        grid-template-columns:100%;
+        grid-template-rows: 50vh;
+        grid-auto-rows: 35vh;
+        gap: 10px;
+    }
+    }
+    .desc{
+        h1{
+            display: none;
+        }
+        h2{
+            margin: 0;
+        }
+    }
+    .desc-article{
+        padding-top: 10px 0;
+    }
+
+    .button-sinsc{
+        a{
+            font-family: $prata;
+        }
+    }
+    .input{
+        margin: 2% 0;
+    }
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+//Version Desktop
+@include desktop{
+    .accueil{
+        p{
+            font-size: 1.5em;
+        }
+        h1{
+            font-size: 3em;
+            text-align: left;
+        }
+        h2{
+            font-size: 1.5em;
+        }
+        margin: 3vh 13vw;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+    }
+    //Division de la page d'accueil en container gauche et droite
+.container-left{
+    margin-top: 0;
+    width: 65%;
+}
+
+.container-right{
+    margin-top: 0;
+    width: 35%;
+}
+
+//GRID
+//Grid droite
+.container-grid-right{
+    grid-template-rows: 15vw 25vw;
+    gap: 12px;
+}
+
+.newsletter{
+    position: relative;
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+}
+
+.a-propos{
+    grid-column: 1 / 1;
+    grid-row: 2 / 3;
+    h2{
+        vertical-align: middle;
+    }
+}
+//Fin Grid droite
+//Grid gauche
+.container-grid-left{
+    grid-template-columns:48% 48%;
+    grid-template-rows: 15vh;
+    grid-auto-rows: minmax(420px, 15vh);
+    gap: 15px;
+    align-items: stretch;
+}
+
+//definition des areas pour les contenus
+.main-article{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+#mobileh2-main{
+    display: none;
+}
+.article{
+
+    .icon{
+        display: inline-block;
+    }
+}
+
+//contenu des areas
+.cont{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    transition: all .3s ease-in;
+    overflow: hidden;
+    img{
+        transition: all .3s ease-out;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.desc{
+    h1{
+        display: block;
+    }
+    h2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    p{
+        margin-top: 5%;
+    }
+}    
+
+.desc-article{
+    height: 30%;
+    width: 100%;
+    padding: 6% 10%;
+
+    transition: all .3s ease-out;
+    
+    h2{ 
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 55%;
+        transition: all .5s ease-out;
+    }
+    .icon{
+        display: none;
+    }
+}
+//Hover
+.main-article:hover .cont{
+    filter: grayscale(0);
+}
+.main-article:hover img{
+    transform: scale(1.1);
+}
+.a-propos:hover .cont{
+    filter: grayscale(0);
+}
+.a-propos:hover img{
+    transform: scale(1.1);
+}
+.article:hover h2{
+    height: 80%;
+}
+.article:hover .cont{
+    filter: grayscale(0);
+}
+
+//Champ text newsletter
+.input{
+    margin: 10% 0;
+    height: 15%;
+    box-shadow: -2px 2px 6px rgba(128, 128, 128, 0.568);
+    border-radius: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: solid 2px black;
+}
+
+.button-sinsc{
+    box-sizing: content-box;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 20px;
+    transition: all .2s ease-out;
+    a{
+        font-size: 100%;
+        display: block;
+        height: 100%;
+    }
+    &:hover {
+        background-color: #e2cea1;
+        transition: 0.8s;
+        transform: translateY(-5px);
+    }
+}
+//icon en savoir plus des articles
+.icon{
+    opacity: 0;
+    transition: .5s ease-out;
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 35px;
+    height: 35px;
+    svg{
+        width: 100%;
+    }
+}
+.article:hover .icon{
+    bottom: 18px;
+    opacity: 1;
+}
+}
+
+
+
+

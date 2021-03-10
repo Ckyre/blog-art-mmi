@@ -1,0 +1,200 @@
+@import "_var";
+@import "_media";
+
+.footercontainer {
+  padding: 4vh 0;
+  position: relative;
+  margin: 13vh 0 0 0;
+  width: 100%;
+  height: 20%;
+  background-color: $colorfond; 
+  .sticky {
+    width: 15%;
+    height: auto;
+    left: 71%;
+  }
+
+  .footercontent {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2vw;
+    background-color: $colorfond;
+    @include laptop {
+      width: 80%;
+    }
+    @include desktop {
+      width: 70%;
+    }
+
+    // Left part of footer
+    .footerleftbox {
+      line-height: 5vw;
+      a{
+        color: white;
+      }
+
+      h1 {
+        display: block;
+        color: #ffff;
+        font-family: "prata";
+        font-size: 30px;
+        @include laptop {
+          font-size: 42px;
+        }
+        @include desktop {
+          font-size: 50px;
+        }
+      }
+
+      p {
+        font-family: $montserrat;
+        color: #ffff;
+        font-size: 12px;
+        font-weight: 200;
+        line-height: 12px;
+        @include laptop {
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    // Mentions
+    .footermentions {
+      .link {
+        display: flex;
+        height: 50%;
+        flex-wrap: wrap;
+        width: 70%;
+        margin-bottom: 3vh;
+  
+        li {
+          margin: 0;
+  
+          &:not(:last-child) {
+            margin-right: 3vw;
+          }
+          
+          .cool-link {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            @include laptop {
+              font-size: 24px;
+            }
+
+            &::after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 2px;
+              background: rgba(245, 187, 61, 1);
+              transition: width 0.3s;
+            }
+          
+            &:hover::after {
+              width: 100%;
+              transition: width 0.3s;
+            }
+          }
+  
+        }
+      }
+
+      .footersocial {
+        // height: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        a {
+          margin: 18px;
+          color: #ffff;
+          height: 40px;
+          font-size: 1.5em;
+          justify-content: center;
+          align-items: center;
+          
+          span{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+    
+        ul {
+          display: flex;  
+          list-style: none;
+          width: 100%;
+    
+          li {
+            display: flex;
+            width: 35px;
+            height: 35px;
+            border: 1px solid rgba(245, 187, 61, 1);
+            border-radius: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      
+            backdrop-filter: blur(10px);
+            transition: 0.5s;
+            @include laptop {
+              width: 50px;
+              height: 50px;
+            }
+            @include desktop {
+              width: 60px;
+              height: 60px;
+            }
+            
+            a {
+              display: block;
+              margin: 0;
+              width: 100%;
+              height: 100%;
+
+              img {
+                width: 50%;
+                display: block;
+                margin: 50% auto 0 auto;
+                transform: translate(0%, -50%);
+              }
+            }
+
+
+            &:not(:last-child) {
+              margin-right: 1.5vw;    
+            }
+      
+            &:hover {
+              transform: translateY(-10px);
+              background-color: rgba(63, 62, 62, 1);
+            }
+          }
+    
+        }
+      }
+
+    }
+    
+  }
+  
+
+  .stickyjames{
+    display: inline-block;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: auto;
+    transform: rotate(-20deg);
+    pointer-events: none;
+    z-index: 2;
+    @include desktop {
+      width: 150px;
+    }
+  }
+}

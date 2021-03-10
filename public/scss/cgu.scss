@@ -1,0 +1,48 @@
+@import "_var";
+@import "_media";
+
+.text-principale {
+  
+  position: relative;
+  display: block;
+  margin: 0 10%;
+  line-height: 40px; /* aérer le texte*/
+  
+
+  @include laptop {
+    margin: 0 10%;
+    position: relative;
+    
+  }
+
+  
+  h1 {
+    margin-top: 10vw;
+    font-family: $prata;
+    font-size: 36px;
+    margin-bottom: 55px;
+    @include laptop {
+        font-size: 48px;
+        margin-bottom: 55px;
+      }
+  }
+  h2 {
+    font-family: $prata;
+    font-size: 24px;
+    text-align: left;
+    
+    @include laptop {
+        font-size: 36px;
+      }
+  }
+  p {
+    margin: 50px 0;
+    font-family: $montserrat;
+    font-size: 20px;
+    
+    @include laptop {
+        font-size: 18px;
+      }
+
+  }
+}

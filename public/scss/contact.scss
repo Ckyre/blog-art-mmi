@@ -1,0 +1,143 @@
+@import "_var";
+@import "_media";
+
+.cookies-container {
+  display: none;
+  position: fixed;
+  bottom: 3vw;
+  left: 1vw;
+  width: 99vw;
+  padding: 30px;
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 2vw;
+    font-family: "prata";
+  }
+
+  p{
+    font-size: 1.1em;
+    margin-bottom: 1.7vw;
+    color: rgb(97, 97, 97);
+    font-family: "montserrat";
+
+    .cookies-question {
+      font-size: 1.2em;
+      color: black;
+    }
+  }
+
+  button{
+    font-family: "prata";
+    font-size: 20px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    border: solid 0px black;
+    padding: 12px 20px;
+
+    &.cookies-accept {
+      background-color: #f5bb3d;
+      box-shadow: -2px 2px 6px rgba(128, 128, 128, 0.753);
+    }
+  }
+
+  @include desktop {
+    width: 500px;
+    left: 3vw;   
+  }
+}
+
+.formcontainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border: 1px solid rgba(0, 0, 0, 0.445);*/
+  padding: 50px;
+  margin: 50px auto 0 auto; /* première valeur = marge haut et bas */
+
+  form {
+    margin: 0 auto;
+    width: 100%; /* par rapport au parent*/
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    background-color: white;
+
+    label {
+      display: inline-block;
+      text-align: right;
+      font-family: "prata";
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    input,
+    textarea {
+      width: 100%;
+      outline: none;
+      display: block; /* pour ne pas s'aligner */
+      font: 18px sans-serif;
+      box-shadow: -2px 2px 6px rgba(128, 128, 128, 0.568);
+      border-radius: 8px;
+      padding: 8px;
+      box-sizing: border-box;
+      border: solid 2px black;
+    }
+    textarea {
+      vertical-align: top;
+      height: 5em;
+    }
+  }
+  form div + div {
+    /* margin-top: 2em;*/
+    margin: 2em auto 0 auto;
+
+    .send{
+      margin-right: 10px;
+    }
+  }
+  button {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+    font-family: "prata";
+    font-size: 20px;
+    background-color: #f5bb3d;
+    border-radius: 5px;
+    border: solid 0px black;
+    box-shadow: -2px 2px 6px grey;
+    padding: 12px 20px;
+  }
+  button:hover {
+    background-color: #e2cea1;
+    transition: 0.8s;
+    transform: translateY(-5px);
+  }
+}
+
+
+.sticky {
+  position: absolute; /* sort du flux*/
+  left: 70%;
+  bottom: 10%;
+  width: 20%;
+  height: auto;
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+
+@include desktop {
+  .formcontainer {
+    padding: 50px; /* haut / droite / bas / gauche */
+    width: 50vw;
+    button {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,194 @@
+@import "_var";
+@import "_media";
+
+
+.article-page { 
+    width: 90vw;
+    margin: 5vw 5vw 0 5vw;
+    @include laptop {
+        width: 80vw;
+        margin: 5vw 10vw 0 10vw;
+    }
+    @include desktop {
+        width: 70vw;
+        margin: 5vw 15vw 0 15vw;
+    }
+
+    .btn {
+        background-color: $colorjaune;
+        border: none;
+        outline: none;
+        display: inline-block;
+        color: black;
+        font-family: $prata;
+        transition: all .2s ease-out;
+        &:hover {
+            background-color: #e2cea1;
+        }
+        &.btn-back {  
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        
+    }
+    
+
+    article {
+        position: relative;
+        header {
+            margin-bottom: 10%;
+            .like-container {
+                display: flex;
+                justify-content: space-between;
+                .btn-like-count {  
+                    padding: 7px 6px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    align-self: center;
+                }
+                .btn-like {  
+                    padding: 4px 10px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    cursor: pointer;
+                    &:focus {
+                        background-color: green;
+                    }
+                }
+            }
+            .date {
+                display: block;
+                margin-top: 10px;
+                font-family: $montserrat;
+                color: black;
+            }
+            .title {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    position: absolute;
+                    width: 200px;
+                    transform: rotate(30deg);
+                    right: 0;
+                    top: 0;
+                    transform-origin: top right;
+                    @include laptop {
+                        right: 10px;
+                        top: 10px;
+                    }
+                }
+                h1 {
+                    font-size: 36px;
+                    margin: 10% 0;
+                    text-align: center;
+                    @include laptop {
+                        margin: 5%;
+                        font-size: 48px;
+                        letter-spacing: 5px;
+                    }  
+                }
+            }
+        }
+        p {
+            margin: 5% 0;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.085em;
+            font-family: $montserrat;
+        }
+        h2 {
+            text-align: center;
+            font-family: $prata;
+            margin: 11% 0 5% 0;
+            font-size: 30px;
+
+            @include laptop {
+                font-size: 36px;
+            }
+            
+        }
+    }
+    .keywords {
+        .keyword {
+            background-color: $colorjaune;
+            color: black;
+            font-family: $montserrat;
+            margin: 5px;
+            border-radius: 5px;
+            padding: 5px;
+            display: inline-block;
+        }
+    }
+    h3 {
+        text-align: center;
+        font-size: 30px;
+    }
+    .comment-container {
+        margin-top: 20px;
+        display: grid;
+        border: 2px solid black;
+        grid-template-columns: 25% 1fr;
+        font-family: $montserrat;
+        padding: 10px;
+        @include laptop {
+            grid-template-columns: 15% 1fr;
+        }
+        img {
+            width: 58px;
+            height: 58px;
+            border-radius: 58px;
+            grid-column: 1/2;
+            align-self: center;
+        }
+        .infos-comment {
+            grid-column: 2/3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .author {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 10px;
+                h4 {
+                    font-size: 16px;
+                }
+                span {
+                    font-size: 10px;
+                    color: #A7A7A7;
+                    @include laptop {
+                        font-size: 12px;
+                    }
+                }
+            }
+            p {
+                font-size: 12px;
+                @include laptop {
+                    font-size: 14px;
+                }
+            }
+        }
+        &.comment-container-invisible {
+            display: none;
+        }
+    }
+    .more-comments {
+        display: block;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        background-color: $colorjaune;
+        border-radius: 15px;
+        font-family: $prata;
+        padding: 15px 25px;
+        outline: none;
+        transition: all .2s ease-out;
+        &:hover {
+            background-color: #e2cea1;
+        }
+    }
+}

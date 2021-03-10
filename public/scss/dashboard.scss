@@ -1,0 +1,277 @@
+@import "_var";
+@import "_media";
+
+$jaune: #f5bb3d;
+$blanc: #fffcf4;
+
+body {
+    background: $blanc;
+}
+
+.dashboard {
+    margin: 0 auto;
+    width: 87vw;
+    margin-top: 1.5%;
+    h1 {
+        font-size: 36px;
+        text-align: center;
+        margin: 3% auto;
+    }
+    .articles-title-desktop {
+        display: none;
+        @include desktop {
+            font-size: 30px;
+            display: inline-block;
+            text-align: center;
+            margin-left: 50%;
+            margin-bottom: 2%;
+        }
+    }
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+            flex-direction: row;
+        }
+
+        h1,h2,h3 {
+            font-family: $prata;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 0;
+            font-family: $montserrat;
+        }
+
+        .name {
+            margin-top: 10px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 5vh;
+            padding: 0;
+            li:not(:last-child) {
+                margin-bottom: 20px;
+                @include laptop {
+                    margin-bottom: 0;
+                }
+                @include desktop {
+                    margin-bottom: 0;
+                }
+            }
+            @include laptop {
+                flex-direction: row;
+            }
+            @include desktop {
+                border-left: 1px solid rgba(128, 128, 128, 0.507);
+                
+            }
+            
+        }
+
+        .left {
+            margin-bottom: 5vw;
+            width: 100%;
+            grid-column: 1/2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include desktop {
+                margin: 0;
+            }
+            .profile-picture {
+                align-self: center;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+            h3 {
+                margin-top: 10px;
+                font-size: 24px;
+            }
+            .likes {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                img {
+                    width: 25px;
+                    margin-top: 10px;
+                }
+                span {
+                    align-self: center;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: rgb(194, 0, 0);
+                font-size: 20px;
+            }
+        }
+
+        
+
+        .preview {
+            display: flex;
+            flex-direction: column;
+            p {
+                align-self: center;
+            }
+            .like {
+                width: 25px;
+                height: 25px;
+                align-self: center;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            align-self: center;
+            margin: 0;
+        }
+
+        .right {
+            grid-column: 2/3;
+            width: 100%;
+            .articles-title {
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 15px;
+                @include desktop {
+                    display: none;
+                }
+            }
+            .articles-container {
+                h2 {
+                    text-align: center;
+                    margin-bottom: 2vw;
+                }
+                .article {
+                    width: 200px;
+                    height: 200px;
+                    position: relative;
+                    cursor: pointer;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .banniere {
+                        width: 100%;
+                        height: 25%;
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.459);
+                        opacity: 78%;
+                        bottom: 0;
+                        display: grid;
+                        grid-template-columns: 80% auto;
+                        h3 {
+                            grid-column: 1/2;
+                            justify-self: start;
+                        }
+                        img {
+                            justify-self: center;
+                            grid-column: 2/3;
+                            width: 25px;
+                            height: 25px;
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+            p {
+                font-size: 18px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+        
+
+        
+
+        
+
+        
+
+        .mdp-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include desktop {
+                align-items: flex-start;
+            }
+            h2 {
+                margin: 0 0 2vw 0;
+                text-align: left;
+                font-size: 24px;
+            }
+            label {
+                margin: 0;
+                margin-bottom: 0.5vw;
+            }
+
+            input {
+                border-radius: 11px;
+                border: 2px solid black;
+                outline: none;
+                width: 75vw;
+                max-width: 400px;
+                height: 35px;
+                margin-bottom: 3vw;
+                padding-left: 10px;
+                box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+                @include laptop {
+                    width: 400px;
+                }
+                @include desktop {
+                    width: 30vw;
+                    margin-bottom: 1.5vw;
+                }
+            }
+            .milieu-mdp {
+                display: flex;
+                flex-direction: column;
+                @include desktop {
+                    flex-direction: row;
+                }
+            }
+
+            .ancien,
+            .nouveau,
+            .confirmer {
+                display: flex;
+                flex-direction: column;
+            }
+
+           
+
+            .confirmer {
+                @include desktop {
+                    margin-left: 3vw;
+                }
+            }
+            .submit {
+                background: $jaune;
+                border-radius: 11px;
+                border: none;
+                width: 155px;
+                height: 43px;
+                box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+                transition: all 0.2s ease-out;
+                font-family: $prata;
+                font-size: 18px;
+    
+                &:hover {
+                    background-color: #e2cea1;
+                }
+            }
+        }
+    }
+}

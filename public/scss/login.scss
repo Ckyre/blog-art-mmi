@@ -1,0 +1,107 @@
+@import "_media";
+@import "_var";
+
+.login-register-fail {
+    margin: 20px auto 0 auto;
+    font-family: $montserrat;
+    background-color: red;
+    color: white;
+    width: 60%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    li {
+        padding: 10px 0;
+    }
+}
+
+.login-container {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    height: 440px;
+    width: 50%;/* modifs Régis - lignes 10 à 13*/
+    border: 1px solid #ccc; 
+    border-radius: 1em; 
+    margin: 4.7vw auto 0 auto; 
+    @include desktop {
+        width: 40%;
+    }   
+
+    .login-top-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+        padding: 1vw; /* modif Régis*/
+
+        a{
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 0;
+            background-color: transparent;
+            font-family: "Prata";
+            font-size: 1rem;
+            @include laptop {
+                font-size: 1.5rem;
+            }
+        }
+        input.active {
+            background-color: #f5bb3d;
+            cursor: initial;
+        }
+    }
+
+    form {
+        width: 80%;
+        margin: 0 auto;
+        font-family: "Montserrat";
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            border: solid 2px black;
+            border-radius: 8px;
+            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+
+            &:first-child {
+                margin-bottom: 30px;
+            }
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            border: none;
+            text-decoration: none;
+            background-color: #f5bb3d;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-family: "Prata";
+            font-size: 20px;
+            margin-top: 80px; /* modif*/
+            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e2cea1;
+            transition: 0.8s;
+            transform: translateY(-5px);
+        }
+    }
+}
+
+@include desktop {
+    .login-container {
+        width: 50%;
+    }
+}

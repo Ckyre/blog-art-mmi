@@ -1,0 +1,81 @@
+@import "_media";
+
+.reseaux  {
+    display: none;
+}
+
+@include desktop {
+    .reseaux {
+        display: block !important;
+        z-index: 1000;
+        position: fixed;
+        top: 40%;
+        left: 7%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        padding: 20px 0px;
+
+        .reseauxparents {
+            width: 100%;
+            height: 100%;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                background: #ffffff;
+                box-shadow: -2px 4px 5px 0px rgba(0, 0, 0, 0.3);
+                border-radius: 20px;
+                padding: 20px 0px;
+                
+                li {
+                    position: relative;
+                    
+                    .imgreseaux {
+                        width: 100%;
+                        height: 100%;
+        
+                        svg {
+                            width: 40%;
+                            display: block;
+                            margin: 0 auto;
+                        }
+        
+        
+                        &.twitter:hover {
+                            fill: #1da1f2;
+                            transition: 0.5s;
+                        }
+            
+                        &.insta:hover {
+                            fill: #e1306c;
+                            transition: 0.5s;              
+                        }
+                        &.fcb:hover {
+                            fill: #3b5998;
+                            transition: 0.5s;               
+                        }
+                    }
+    
+                    &:not(:first-child) .imgreseaux svg {
+                        margin-top: 50%;
+                    }
+                }
+            }
+
+           
+
+        }
+    }
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+
+    &.active {
+        transform: translateY(-10px);
+        opacity: 1;
+        transition: all 1.5s ease-in-out;
+    }
+}

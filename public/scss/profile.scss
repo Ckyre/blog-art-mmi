@@ -1,0 +1,123 @@
+@import "_media";
+@import "_var";
+
+.profile {
+    margin: 0 2vw;
+
+     .left {
+        width: 100%;
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .profile-container {
+            border: solid 2px rgba(0, 0, 0, 0.6);
+            padding: 40px 20px;
+
+            .profile-picture {
+                border-radius:1000px;
+                width: 100%;
+            }
+            h2 {
+                font-size: 2em;
+                text-align: center;
+                margin-top: 30px;
+            }
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                margin-top: 25px;
+                padding-left: 0px;
+            }
+            ul li:not(:last-child) {
+                margin-right: 10px;
+            }
+            ul li img {
+                width: 30px;
+            }
+            ul li span {
+                display: block;
+                text-align:center;
+                margin: 0 auto;
+            }
+        }
+        
+    }
+    
+    
+    .right {
+        width: 100%;
+        margin-top: 70px;
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style:none;
+            padding:0;
+
+            li {
+                background-color: rgb(255, 255, 255);
+                box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+                padding: 20px;
+
+                .comment-from-article {
+                    color:rgb(87, 87, 87);
+                    margin-bottom: 7px;
+                }
+                .comment-content {
+                    font-size: 19px;
+                }
+            }
+            li:not(:last-child){
+                margin-bottom: 30px;
+            }
+        }
+
+        .more-comments {
+            background-color: #F5BB3D;
+            border: none;
+            border-radius: 11px;
+            padding: 15px 32px;
+            font-size: 1.3em;
+            display: block;
+            margin: 20px auto 0 auto;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #f3cf82;
+            }
+        }
+
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10vw;
+
+        .left {
+            width: 40%;
+
+            .profile-container {
+                padding: 15px;
+            }
+        }
+
+        .right {
+            width: 50%;
+
+            .more-comments {
+                margin: 20px 0 0 0;
+                padding: 15px 30px;
+                font-size: 1em;
+            }
+        }
+    }
+}
+
